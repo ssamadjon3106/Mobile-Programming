@@ -1,6 +1,3 @@
-// Topic 8: Inheritance (Problems 8.2 - 8.6)
-
-// 8.2 Base class Animal, derived Dog overriding makeSound()
 class Animal {
   final String name;
   Animal(this.name);
@@ -15,7 +12,6 @@ class Dog extends Animal {
   void makeSound() => print('$name says: Woof!');
 }
 
-// 8.3 Super-initializer parameters syntax
 class Vehicle {
   final String brand;
   Vehicle(this.brand);
@@ -30,7 +26,6 @@ class ElectricCar extends Vehicle {
   String toString() => '$brand with $batteryCapacity kWh battery';
 }
 
-// 8.4 Multi-level hierarchy: Shape -> Polygon -> Triangle
 class Shape {
   final String name;
   Shape(this.name);
@@ -62,15 +57,12 @@ class Triangle extends Polygon {
   }
 }
 
-// 8.5 Abstract base class with concrete and abstract methods
 abstract class Employee {
   final String name;
   Employee(this.name);
 
-  // Abstract: every subclass must implement
   double calculateSalary();
 
-  // Concrete: shared by all subclasses
   void printPayslip() =>
       print('$name earns \$${calculateSalary().toStringAsFixed(2)}');
 }
@@ -92,15 +84,11 @@ class PartTimeEmployee extends Employee {
   double calculateSalary() => hourlyRate * hours;
 }
 
-// 8.6 Dart 3 final and base class modifiers
-// `final class` cannot be extended or implemented outside this library.
 final class SecureToken {
   final String value;
   SecureToken(this.value);
 }
 
-// `base class` can be extended, but not implemented outside this library.
-// Subclasses must themselves be base, final or sealed.
 base class Account {
   double balance = 0;
   void deposit(double amount) => balance += amount;
@@ -113,23 +101,14 @@ final class SavingsAccount extends Account {
   void addInterest() => balance += balance * interestRate;
 }
 
-// In another file these would be compile errors:
-// class FakeToken extends SecureToken {}        // final: cannot extend
-// class MyAccount implements Account {}          // base: cannot implement
-// class MoreSavings extends SavingsAccount {}    // final: cannot extend
-
 void main() {
-  // Test 8.2
   Animal pet = Dog('Rex');
   pet.makeSound();
 
-  // Test 8.3
   print(ElectricCar('Tesla', 75));
 
-  // Test 8.4
   Triangle(3, 4, 5).describe();
 
-  // Test 8.5
   final staff = <Employee>[
     FullTimeEmployee('Ali', 3000),
     PartTimeEmployee('Vali', 15, 80),
@@ -138,7 +117,6 @@ void main() {
     e.printPayslip();
   }
 
-  // Test 8.6
   final token = SecureToken('abc123');
   final savings = SavingsAccount(0.05)..deposit(1000);
   savings.addInterest();

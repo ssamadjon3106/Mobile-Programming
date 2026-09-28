@@ -1,9 +1,5 @@
-// Topic 7: Enums (Problems 7.2 - 7.6)
-
-// 7.2 Basic enum Day, iterate using Day.values
 enum Day { monday, tuesday, wednesday, thursday, friday, saturday, sunday }
 
-// 7.3 Map enum value to a UI display string using a switch expression
 String dayLabel(Day day) => switch (day) {
       Day.monday => 'Mon',
       Day.tuesday => 'Tue',
@@ -13,7 +9,6 @@ String dayLabel(Day day) => switch (day) {
       Day.saturday || Day.sunday => 'Weekend',
     };
 
-// 7.4 Enhanced enum implementing an abstract interface with computed methods
 abstract interface class Priced {
   double get price;
   double priceWithTax(double taxRate);
@@ -36,7 +31,6 @@ enum CoffeeSize implements Priced {
   double get pricePerMl => price / ml;
 }
 
-// 7.5 Safely parse raw strings into enum values with values.byName()
 enum Role { admin, editor, viewer }
 
 Role parseRole(String raw) {
@@ -48,7 +42,6 @@ Role parseRole(String raw) {
   }
 }
 
-// 7.6 Enhanced enum with generic parameter and static helper methods
 enum Setting<T> {
   volume<int>(50),
   darkMode<bool>(false),
@@ -70,26 +63,21 @@ enum Setting<T> {
 }
 
 void main() {
-  // Test 7.2
   for (final day in Day.values) {
     print('${day.index}: ${day.name}');
   }
 
-  // Test 7.3
   print('Saturday label: ${dayLabel(Day.saturday)}');
   print('Monday label: ${dayLabel(Day.monday)}');
 
-  // Test 7.4
   for (final size in CoffeeSize.values) {
     print('${size.name}: \$${size.priceWithTax(0.12).toStringAsFixed(2)} '
         '(${size.pricePerMl.toStringAsFixed(4)} \$/ml)');
   }
 
-  // Test 7.5
   print('Parsed: ${parseRole(' Admin ')}');
   print('Parsed: ${parseRole('hacker')}');
 
-  // Test 7.6
   int volume = Setting.volume.defaultValue;
   print('Default volume: $volume');
   print('Found: ${Setting.fromName('darkMode')}');

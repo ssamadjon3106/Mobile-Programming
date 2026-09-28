@@ -1,6 +1,3 @@
-// Topic 5: Comments & Documentation (Problems 5.2 - 5.6)
-
-// 5.2 Single-line and multi-line comments explaining a calculation
 double circleArea(double radius) {
   // Area of a circle: A = pi * r^2
   const pi = 3.14159;
@@ -12,8 +9,6 @@ double circleArea(double radius) {
   */
   return pi * radius * radius;
 }
-
-// 5.3 Dartdoc comments for a data validation utility class
 
 /// Utility class with static helpers for validating user input.
 class Validator {
@@ -38,8 +33,6 @@ class Validator {
   }
 }
 
-// 5.4 Markdown formatting inside a Dartdoc comment
-
 /// Calculates the **arithmetic mean** of a list of numbers.
 ///
 /// Rules:
@@ -56,8 +49,6 @@ double mean(List<num> values) {
   if (values.isEmpty) throw ArgumentError('List cannot be empty');
   return values.reduce((a, b) => a + b) / values.length;
 }
-
-// 5.5 @deprecated and @override with explaining doc comments
 
 /// Base class for anything that can greet a user.
 class Greeter {
@@ -77,8 +68,6 @@ class UzbekGreeter extends Greeter {
   @override
   void greet(String name) => print('Assalomu alaykum, $name!');
 }
-
-// 5.6 Fully documented API class ready for `dart doc`
 
 /// A simple library book management API.
 ///
@@ -132,21 +121,16 @@ class Book {
 }
 
 void main() {
-  // Test 5.2
   print('Circle area (r=2): ${circleArea(2)}');
 
-  // Test 5.3
   print('Valid email? ${Validator.isValidEmail('samadjon@nu.uz')}');
   print('Valid age 150? ${Validator.isValidAge(150)}');
 
-  // Test 5.4
   print('Mean: ${mean([1, 2, 3, 4])}');
 
-  // Test 5.5
   Greeter g = UzbekGreeter();
   g.greet('Samadjon');
 
-  // Test 5.6
   final library = Library();
   library.addBook(Book('111', 'Clean Code'));
   library.borrow('111');

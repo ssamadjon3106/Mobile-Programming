@@ -1,6 +1,3 @@
-// Topic 6: Classes & Constructors (Problems 6.2 - 6.6)
-
-// 6.2 Person class with a standard constructor
 class Person {
   String name;
   int age;
@@ -10,7 +7,6 @@ class Person {
   void introduce() => print("Hi, I'm $name and I'm $age years old.");
 }
 
-// 6.3 Initializer list validating input before field assignment
 class Temperature {
   final double celsius;
 
@@ -24,7 +20,6 @@ class Temperature {
   }
 }
 
-// 6.4 Singleton with private constructor and static factory
 class AppConfig {
   static final AppConfig _instance = AppConfig._internal();
 
@@ -35,7 +30,6 @@ class AppConfig {
   factory AppConfig() => _instance;
 }
 
-// 6.5 Custom getter and setter enforcing domain constraints
 class Student {
   final String name;
   double _gpa = 0;
@@ -54,7 +48,6 @@ class Student {
   bool get isHonors => _gpa >= 3.5;
 }
 
-// 6.6 Immutable data transfer class with const constructor and final fields
 class UserDto {
   final int id;
   final String username;
@@ -73,10 +66,8 @@ class UserDto {
 }
 
 void main() {
-  // Test 6.2
   Person('Samadjon', 20).introduce();
 
-  // Test 6.3
   print('Temperature: ${Temperature(25).celsius} C');
   try {
     Temperature(-300);
@@ -84,13 +75,11 @@ void main() {
     print('Invalid temperature: $e');
   }
 
-  // Test 6.4
   final config1 = AppConfig();
   final config2 = AppConfig();
   config1.theme = 'dark';
   print('Same instance? ${identical(config1, config2)}, theme: ${config2.theme}');
 
-  // Test 6.5
   final student = Student('Samadjon');
   student.gpa = 3.7;
   print('GPA: ${student.gpa}, honors: ${student.isHonors}');
@@ -100,7 +89,6 @@ void main() {
     print('Error: $e');
   }
 
-  // Test 6.6
   const user = UserDto(id: 1, username: 'samadjon', email: 'samadjon@nu.uz');
   final updated = user.copyWith(email: 'new@nu.uz');
   print(user);
