@@ -1,0 +1,34 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.g.dart
+*.freezed.dart
+
+# Android
+android/
+.gradle/
+local.properties
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+
+# iOS
+ios/
+*.ipa
+*.xcarchive
+
+# macOS/Windows/Linux
+macos/
+windows/
+linux/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Pub
+pubspec.lock
