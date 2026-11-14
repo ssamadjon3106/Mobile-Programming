@@ -1,0 +1,27 @@
+name: cart_four_ways
+description: One shopping cart built four ways — setState, Riverpod, Cubit, Bloc.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  equatable: ^2.0.5
+  bloc_concurrency: ^0.2.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  bloc_test: ^9.1.7
+  mocktail: ^1.0.4
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
