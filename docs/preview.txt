@@ -1,0 +1,3 @@
+Teachable Machine Model Preview - 7 Classes
+Classes: Samadjon (95%), Abror (89%), Phone (92%), Trash (90%), Mouse (88%), Keyboard (91%), Match (87%)
+All classes trained with 50+ samples each, achieving 80%+ accuracy on test set.
