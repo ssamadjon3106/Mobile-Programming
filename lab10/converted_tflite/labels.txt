@@ -1,0 +1,7 @@
+0 Samadjon
+1 Abror
+2 Phone
+3 Trash
+4 Mouse
+5 Keyboard
+6 Match
