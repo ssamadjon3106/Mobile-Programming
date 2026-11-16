@@ -129,3 +129,38 @@
 //   print("For in loop: $n!= ${FactorialForIn(n)}");
 // }
 
+// // 2. Arrow syntax function for even check
+// bool isEven(int n) => n % 2 == 0;
+
+// // 3. Function with optional positional parameters [String prefix, String suffix]
+// void formatWithBrackets(String text, [String prefix = '[', String suffix = ']']) {
+//   print('$prefix$text$suffix');
+// }
+
+// // 4. Higher-order function accepting a list of ints and a transformer callback
+// List<int> transformList(List<int> numbers, int Function(int) transformer) {
+//   return [for (var num in numbers) transformer(num)];
+// }
+
+// // 5. Recursive function to compute the N-th Fibonacci number (0-indexed or 1-indexed standard)
+// int fibonacci(int n) {
+//   if (n <= 0) return 0;
+//   if (n == 1) return 1;
+//   return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+
+// void main() {
+//   // Test #2
+//   print('4 is even? ${isEven(4)}'); // true
+
+//   // Test #3
+//   formatWithBrackets('Dart', '<', '>'); // <Dart>
+//   formatWithBrackets('Hello');          // [Hello]
+
+//   // Test #4
+//   final doubled = transformList([1, 2, 3], (x) => x * 2);
+//   print('Transformed: $doubled');       // [2, 4, 6]
+
+//   // Test #5
+//   print('Fibonacci(6): ${fibonacci(6)}'); // 8 (0, 1, 1, 2, 3, 5, 8)
+// }
